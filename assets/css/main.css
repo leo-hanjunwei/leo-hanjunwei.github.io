@@ -2073,11 +2073,11 @@ input, select, textarea {
 				border-radius: 0.35em;
 				border: solid 3px rgba(255, 255, 255, 0.5);
 				color: #fff;
-				content: 'View';
+				content: 'View in Github';
 				display: inline-block;
 				font-size: 0.8em;
 				font-weight: 400;
-				left: 50%;
+				left: 45%;
 				line-height: 2.25em;
 				margin: -1.25em 0 0 -3em;
 				opacity: 0;
@@ -3219,3 +3219,184 @@ input, select, textarea {
 			}
 
 	}
+
+/* === Custom Section Headers for Portfolio === */
+
+.section-header {
+	text-align: center;
+	margin-bottom: 2.5em;
+}
+
+.section-subtitle {
+	color: #777;
+	font-size: 1rem;
+	margin-bottom: 0.5em;
+	letter-spacing: 0.03em;
+}
+
+.section-title {
+	font-weight: 800;
+	font-size: 2.2em;
+	color: rgb(63, 103, 139);
+	margin-bottom: 0.5em;
+}
+
+.section-underline {
+	height: 4px;
+	width: 60px;
+	margin: 0 auto;
+	background: linear-gradient(to right, #b6c8db, #3c5963); /* Gray → Teal */
+	border-radius: 4px;
+}
+
+/* === Card-Style Skills Grid === */
+
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2em;
+	padding: 2em 0;
+}
+
+.skill-box {
+	background: #f8f8f8;
+	padding: 2em;
+	text-align: center;
+	border-radius: 0.75em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+	transition: transform 0.2s ease;
+}
+
+.skill-box:hover {
+	transform: translateY(-5px);
+}
+
+.skill-box img {
+	height: 60px;
+	margin-bottom: 1em;
+}
+
+.skill-box h3 {
+	font-size: 1.2em;
+	color: #333;
+	margin-bottom: 0.5em;
+	font-weight: 600;
+}
+
+.skill-box p {
+	font-size: 0.95em;
+	line-height: 1.6em;
+	color: #666;
+}
+
+/* === Education Section with Circular GPA === */
+.edu-entry {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 3em;
+}
+
+.edu-text {
+	flex: 1;
+	min-width: 280px;
+}
+
+.edu-text h3 {
+	font-size: 1.2em;
+	margin-bottom: 0.4em;
+	color: #333;
+}
+
+.edu-date,
+.edu-degree {
+	margin-left: 3.6em;
+	font-size: 0.95em;
+	color: #666;
+	margin-bottom: 0.3em;
+}
+
+.edu-date i,
+.edu-degree i {
+	margin-right: 0.5em;
+	color: #3c5963;
+}
+
+
+.edu-icon-brown {
+	width: 1.5em;
+	height: 2.0em;
+	object-fit: contain;
+	margin-right: 0.5em;
+	vertical-align: text-bottom;
+}
+
+.edu-icon-uiuc {
+	width: 1.5em;
+	height: 1.5em;
+	object-fit: contain;
+	margin-right: 0.5em;
+	vertical-align: text-bottom;
+}
+/* GPA Circle Styles */
+
+
+.gpa-circle {
+	width: 100px;
+	margin-left: 2em;
+	text-align: center;
+}
+
+.circular-chart {
+	width: 100%;
+	height: auto;
+	transform: rotate(-90deg);
+}
+
+.circle-bg {
+	fill: none;
+	stroke: #eee;
+	stroke-width: 3.8;
+}
+
+.circle {
+	fill: none;
+	stroke: #b2d2dc;
+	stroke-width: 3.8;
+	stroke-linecap: round;
+	transition: stroke-dasharray 1.4s ease-out;
+}
+
+.percentage {
+	fill: #4b5e64;
+	font-family: sans-serif;
+	font-size: 0.50em;
+	font-weight: bold;
+	text-anchor: middle;
+	dominant-baseline: central;
+	transform: rotate(90deg);
+	transform-origin: center;
+}
+
+
+.gpa-label {
+	font-size: 0.85em;
+	margin-top: 0.25em;
+	color: #888;
+}
+
+/* Responsive tweak: Stack on smaller screens */
+
+@media screen and (max-width: 640px) {
+	.edu-entry {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.gpa-circle {
+		margin-left: 0;
+		margin-top: 1em;
+		align-self: center;
+	}
+}
