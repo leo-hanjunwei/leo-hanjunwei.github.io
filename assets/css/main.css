@@ -3403,6 +3403,29 @@ input, select, textarea {
 	
 }
 
+/* focus area */
+
+.skill-box.highlight {
+	animation: pulse-highlight-area 1.4s ease-in-out;
+  }
+  
+  @keyframes pulse-highlight-area {
+	0% {
+	  transform: scale(1);
+	  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	}
+	50% {
+	  transform: scale(1.08);
+	  background-color: #ffeccf;
+	  color: #b35b00;
+	  box-shadow: 0 0 12px rgba(255, 200, 0, 0.4);
+	}
+	100% {
+	  transform: scale(1);
+	  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	}
+  }
+  
 /* technical-skills */
 #technical-skills {
 	padding-top: 3em;
@@ -3445,8 +3468,34 @@ input, select, textarea {
   
 
   .skill-tags span:hover {
-	transform: scale(1.1);
+	transform: scale(1.2);
 	background-color: #d0eaff;
 	box-shadow: 0 4px 10px rgba(0, 91, 153, 0.1);
   }
   
+  /* Tag highlight animation */
+  .highlight {
+	animation: pulse-highlight-skill 4.0s ease-in;
+	animation: pulse-highlight-skill 4.0s ease-out;
+  }
+
+  @keyframes pulse-highlight-skill {
+	0% {
+	  transform: scale(1);
+	  background-color: #e6f3ff;
+	  color: #005b99;
+	  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+	}
+	30% {
+	  transform: scale(1.1);
+	  background-color: #ffeccf;
+	  color: #b35b00;
+	  box-shadow: 0 0 12px rgba(255, 200, 0, 0.4);
+	}
+	100% {
+	  transform: scale(1);
+	  background-color: #e6f3ff;
+	  color: #005b99;
+	  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+	}
+  }

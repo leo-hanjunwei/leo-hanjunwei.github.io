@@ -107,3 +107,94 @@
 	});
 
 })(jQuery);
+
+
+// GPA Animation Script
+
+function animateGPAcircles() {
+	document.querySelectorAll('.gpa-circle').forEach(circleWrapper => {
+		const rect = circleWrapper.getBoundingClientRect();
+		const inView = rect.top <= window.innerHeight - 100;
+
+		if (inView && !circleWrapper.classList.contains('animated')) {
+			const svgPath = circleWrapper.querySelector('.circle');
+			const text = circleWrapper.querySelector('.percentage');
+			const targetGPA = parseFloat(circleWrapper.getAttribute('data-gpa'));
+			const maxGPA = 4.0;
+
+			let currentGPA = 0;
+			const duration = 1000; // total duration in ms
+			const frameRate = 10;  // update every 10ms
+			const totalSteps = duration / frameRate;
+			const increment = targetGPA / totalSteps;
+
+			circleWrapper.classList.add('animated');
+
+			const animate = setInterval(() => {
+				currentGPA += increment;
+				if (currentGPA >= targetGPA) {
+					currentGPA = targetGPA;
+					clearInterval(animate);
+				}
+
+				const percent = (currentGPA / maxGPA) * 100;
+				svgPath.setAttribute('stroke-dasharray', `${percent}, 100`);
+				text.textContent = currentGPA.toFixed(2);
+			}, frameRate);
+		}
+	});
+}
+
+window.addEventListener('scroll', animateGPAcircles);
+window.addEventListener('load', animateGPAcircles);
+
+// Skill box
+
+function scrollToSkillsAndHighlight(className) {
+	const section = document.getElementById("technical-skills");
+  
+	// Smooth scroll to section
+	section.scrollIntoView({ behavior: "smooth" });
+  
+	// Remove existing highlights first
+	document.querySelectorAll(".skill-tags .tag").forEach(tag => {
+	  tag.classList.remove("highlight");
+	});
+  
+	// Delay to allow scroll animation to finish (adjust if needed)
+	setTimeout(() => {
+	  const targets = document.querySelectorAll(`.skill-tags .${className}`);
+	  targets.forEach(tag => tag.classList.add("highlight"));
+  
+	  // Remove after 1.2s
+	  setTimeout(() => {
+		targets.forEach(tag => tag.classList.remove("highlight"));
+	  }, 10200);
+	}, 500); // ⏳ adjust this delay to match scroll duration
+  }
+  
+  // technical Skills
+  function scrollToFocusAreaAndHighlight(className) {
+	// Find the specific skill box to center
+	const target = document.querySelector(`.skill-box.${className}`);
+	if (!target) return;
+  
+	// Scroll that skill-box into center of the screen
+	target.scrollIntoView({ behavior: "smooth", block: "center" });
+  
+	// Remove any existing highlight
+	document.querySelectorAll(".skill-box").forEach(box => {
+	  box.classList.remove("highlight");
+	});
+  
+	// Highlight it after slight delay
+	setTimeout(() => {
+	  target.classList.add("highlight");
+  
+	  // Remove after animation
+	  setTimeout(() => {
+		target.classList.remove("highlight");
+	  }, 1200);
+	}, 400); // Wait for scroll to complete before animating
+  }
+  
