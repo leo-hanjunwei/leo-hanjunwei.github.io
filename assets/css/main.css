@@ -3375,8 +3375,6 @@ input, select, textarea {
 	font-size: 8px;
 	font-weight: bold;
 	text-anchor: middle;
-	transform: rotate(90deg);
-	transform-origin: center;
 	dominant-baseline: middle;
   }
   
