@@ -3370,15 +3370,16 @@ input, select, textarea {
 
 
 
+
   .percentage {
 	fill: #4b5e64;
 	font-family: sans-serif;
 	font-size: 8px;
 	font-weight: bold;
-	transform: rotate(90deg);
-	transform-origin: center;
 	text-anchor: middle;
 	dominant-baseline: middle;
+	transform: rotate(90deg);
+	transform-origin: center;
   }
   
   @media screen and (max-width: 640px) {
