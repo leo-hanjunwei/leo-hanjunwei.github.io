@@ -174,27 +174,31 @@ function scrollToSkillsAndHighlight(className) {
   }
   
   // technical Skills
-  function scrollToFocusAreaAndHighlight(className) {
-	// Find the specific skill box to center
-	const target = document.querySelector(`.skill-box.${className}`);
-	if (!target) return;
+  function scrollToFocusAreas(element) {
+	const classNames = element.getAttribute("data-focus").split(" ");
+	if (!classNames || classNames.length === 0) return;
   
-	// Scroll that skill-box into center of the screen
-	target.scrollIntoView({ behavior: "smooth", block: "center" });
+	// Scroll to the first box as primary
+	const primaryBox = document.querySelector(`.skill-box.${classNames[0]}`);
+	if (primaryBox) {
+	  primaryBox.scrollIntoView({ behavior: "smooth", block: "center" });
+	}
   
-	// Remove any existing highlight
+	// Remove old highlights
 	document.querySelectorAll(".skill-box").forEach(box => {
 	  box.classList.remove("highlight");
 	});
   
-	// Highlight it after slight delay
+	// Highlight all related focus boxes
 	setTimeout(() => {
-	  target.classList.add("highlight");
-  
-	  // Remove after animation
-	  setTimeout(() => {
-		target.classList.remove("highlight");
-	  }, 1200);
-	}, 400); // Wait for scroll to complete before animating
+	  classNames.forEach(className => {
+		const box = document.querySelector(`.skill-box.${className}`);
+		if (box) {
+		  box.classList.add("highlight");
+		  setTimeout(() => {
+			box.classList.remove("highlight");
+		  }, 1200);
+		}
+	  });
+	}, 400); // wait for scroll
   }
-  

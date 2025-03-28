@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+	<link rel="icon" type="image/png" href="images/paper-plane.png">
 </head>
 
 <body class="is-preload">
@@ -118,15 +119,15 @@
 		<div class="skills-overview-grid">
 		  <div class="skills-column">
 			<div class="skill-tags">
-				<span class="tag tag-ml" onclick="scrollToFocusAreaAndHighlight('focus-ml')">TensorFlow</span>
-				<span class="tag tag-ml" onclick="scrollToFocusAreaAndHighlight('focus-ml')">Scikit-learn</span>
-				<span class="tag tag-exp" onclick="scrollToFocusAreaAndHighlight('focus-exp')">Statistical Modeling</span>
-				<span class="tag tag-exp" onclick="scrollToFocusAreaAndHighlight('focus-exp')">A/B Testing</span>
-				<span class="tag tag-nlp" onclick="scrollToFocusAreaAndHighlight('focus-nlp')">Topic Modeling</span>
-				<span class="tag tag-llm" onclick="scrollToFocusAreaAndHighlight('focus-llm')">LLM Applications</span>
-				<span class="tag tag-data" onclick="scrollToFocusAreaAndHighlight('focus-data')">Azure</span>
-				<span class="tag tag-vis" onclick="scrollToFocusAreaAndHighlight('focus-vis')">plotly</span>
-				
+				<span class="tag tag-ml" data-focus="focus-ml" onclick="scrollToFocusAreas(this)">TensorFlow</span>
+				<span class="tag tag-ml tag-exp" data-focus="focus-ml focus-exp" onclick="scrollToFocusAreas(this)">Scikit-learn</span>
+				<span class="tag tag-exp" data-focus="focus-exp" onclick="scrollToFocusAreas(this)">Statistical Modeling</span>
+				<span class="tag tag-ml tag-exp" data-focus="focus-ml focus-exp" onclick="scrollToFocusAreas(this)">Python</span>
+				<span class="tag tag-ml tag-exp" data-focus="focus-ml focus-exp" onclick="scrollToFocusAreas(this)">A/B Testing</span>
+				<span class="tag tag-nlp" data-focus="focus-nlp" onclick="scrollToFocusAreas(this)">Topic Modeling</span>
+				<span class="tag tag-llm" data-focus="focus-llm" onclick="scrollToFocusAreas(this)">Autogen</span>
+				<span class="tag tag-data" data-focus="focus-data" onclick="scrollToFocusAreas(this)">Azure</span>
+				<span class="tag tag-vis" data-focus="focus-vis" onclick="scrollToFocusAreas(this)">plotly</span>				
 			  <span>…</span>
 			</div>
 		  </div>
