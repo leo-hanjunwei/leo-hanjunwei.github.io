@@ -3351,9 +3351,12 @@ input, select, textarea {
 .circular-chart {
 	width: 100%;
 	height: auto;
-	transform: rotate(-90deg);
-}
 
+}
+/*transform: rotate(-90deg);
+
+
+*/
 .circle-bg {
 	fill: none;
 	stroke: #eee;
@@ -3367,20 +3370,20 @@ input, select, textarea {
 	stroke-linecap: round;
 	transition: stroke-dasharray 1.4s ease-out;
 }
+/*
+	transform: rotate(90deg);
+	transform-origin: center;
 
-
-
-
-  .percentage {
+*/
+.percentage {
 	fill: #4b5e64;
 	font-family: sans-serif;
 	font-size: 8px;
 	font-weight: bold;
 	text-anchor: middle;
 	dominant-baseline: middle;
-	transform: rotate(90deg);
-	transform-origin: center;
   }
+
   
   @media screen and (max-width: 640px) {
 	.percentage {
