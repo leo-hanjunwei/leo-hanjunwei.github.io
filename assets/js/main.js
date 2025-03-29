@@ -169,7 +169,7 @@ function scrollToSkillsAndHighlight(className) {
 	  // Remove after 1.2s
 	  setTimeout(() => {
 		targets.forEach(tag => tag.classList.remove("highlight"));
-	  }, 10200);
+	  },8000);
 	}, 500); // ⏳ adjust this delay to match scroll duration
   }
   

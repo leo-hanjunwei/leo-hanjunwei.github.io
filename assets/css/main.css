@@ -3480,8 +3480,7 @@ input, select, textarea {
   
   /* Tag highlight animation */
   .highlight {
-	animation: pulse-highlight-skill 4.0s ease-in;
-	animation: pulse-highlight-skill 4.0s ease-out;
+	animation: pulse-highlight-skill 8.0s ease-in-out;
   }
 
   @keyframes pulse-highlight-skill {
@@ -3491,12 +3490,18 @@ input, select, textarea {
 	  color: #005b99;
 	  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
 	}
-	30% {
+	10% {
 	  transform: scale(1.1);
 	  background-color: #ffeccf;
 	  color: #b35b00;
 	  box-shadow: 0 0 12px rgba(255, 200, 0, 0.4);
 	}
+	90% {
+		transform: scale(1.1);
+		background-color: #ffeccf;
+		color: #b35b00;
+		box-shadow: 0 0 12px rgba(255, 200, 0, 0.4);
+	  }
 	100% {
 	  transform: scale(1);
 	  background-color: #e6f3ff;
